@@ -143,6 +143,9 @@ app_license = "mit"
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
+# "File":{
+	# 	"after_insert":"ecs_s3_storage.utils.s3_file_storage.update_file_url"
+	# }
 # }
 
 # Scheduled Tasks
@@ -242,3 +245,7 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# S3 File Storage Hooks
+# ----------------------
+write_file = "ecs_s3_storage.utils.s3_file_storage.write_file"
+delete_file_data_content = "ecs_s3_storage.utils.s3_file_storage.delete_file_data_content"

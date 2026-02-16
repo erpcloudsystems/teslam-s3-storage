@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-26 16:23:58.112519",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enable_s3",
+  "bucket_name",
+  "region",
+  "column_break_cyhx",
+  "endpoint_url",
+  "section_break_cvdj",
+  "access_key_id",
+  "column_break_duwh",
+  "access_key_secret"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enable_s3",
+   "fieldtype": "Check",
+   "label": "Enable S3"
+  },
+  {
+   "fieldname": "bucket_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bucket Name",
+   "mandatory_depends_on": "eval:doc.enable_s3"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Region",
+   "mandatory_depends_on": "eval:doc.enable_s3"
+  },
+  {
+   "fieldname": "column_break_cyhx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "https://s3.amazonaws.com",
+   "fieldname": "endpoint_url",
+   "fieldtype": "Data",
+   "label": "Endpoint URL"
+  },
+  {
+   "fieldname": "section_break_cvdj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "access_key_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Access Key ID",
+   "mandatory_depends_on": "eval:doc.enable_s3"
+  },
+  {
+   "fieldname": "column_break_duwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "access_key_secret",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Access Key Secret",
+   "mandatory_depends_on": "eval:doc.enable_s3"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-26 16:31:11.100258",
+ "modified_by": "Administrator",
+ "module": "Ecs S3 Storage",
+ "name": "S3 Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
