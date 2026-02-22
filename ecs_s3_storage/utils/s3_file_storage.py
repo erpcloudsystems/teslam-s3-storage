@@ -22,7 +22,7 @@ def write_file(file_doc):
     """
 
     s3_settings = get_s3_settings()
-    if not s3_settings or file_doc.attached_to_doctype == "Data Import":
+    if not s3_settings or file_doc.attached_to_doctype in ["Data Import","Prepared Report","Repost Item Valuation"]:
         return file_doc.save_file_on_filesystem()
     try:
         s3_client = create_s3_client(s3_settings)
@@ -106,7 +106,7 @@ def delete_file_data_content(file_doc, only_thumbnail=False):
     Called via delete_file_data_content hook.
     """
     s3_settings = get_s3_settings()
-    if not s3_settings or file_doc.attached_to_doctype == "Data Import":
+    if not s3_settings or file_doc.attached_to_doctype in ["Data Import","Prepared Report","Repost Item Valuation"]:
         return file_doc.delete_file_from_filesystem(only_thumbnail=only_thumbnail)
 
     try:
